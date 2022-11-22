@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        initViews()
+        createConstraints()
+        
     }
     
     func initViews() {
@@ -28,7 +30,7 @@ class ViewController: UIViewController {
         view2.translatesAutoresizingMaskIntoConstraints = false
         view3.translatesAutoresizingMaskIntoConstraints = false
         
-        view1.backgroundColor = .darkGray
+        view1.backgroundColor = .cyan
         view2.backgroundColor = .black
         view3.backgroundColor = .brown
         
@@ -36,6 +38,15 @@ class ViewController: UIViewController {
         self.view.addSubview(view1)
         self.view.addSubview(view2)
         self.view.addSubview(view3)
+    }
+    
+    func createConstraints() {
+        let leftPin = NSLayoutConstraint(item: view1, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let topPin = NSLayoutConstraint(item: view1, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+        let rightPin = NSLayoutConstraint(item: view1, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let pinBottom = NSLayoutConstraint(item: view1, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        
+        self.view.addConstraints([leftPin, rightPin, topPin, pinBottom])
     }
 
 
