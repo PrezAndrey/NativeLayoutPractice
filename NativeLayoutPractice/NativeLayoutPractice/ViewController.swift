@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         view3.translatesAutoresizingMaskIntoConstraints = false
         
         view1.backgroundColor = .cyan
-        view2.backgroundColor = .black
+        view2.backgroundColor = .green
         view3.backgroundColor = .brown
         
         
@@ -41,12 +41,20 @@ class ViewController: UIViewController {
     }
     
     func createConstraints() {
-        let leftPin = NSLayoutConstraint(item: view1, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
-        let topPin = NSLayoutConstraint(item: view1, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
-        let rightPin = NSLayoutConstraint(item: view1, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        let pinBottom = NSLayoutConstraint(item: view1, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let leftPinView1 = NSLayoutConstraint(item: view1!, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let topPinView1 = NSLayoutConstraint(item: view1, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+        let rightPinView1 = NSLayoutConstraint(item: view1, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let heightView1 = NSLayoutConstraint(item: view1, attribute: .height, relatedBy: .equal, toItem: self.view, attribute: .height, multiplier: 0.65, constant: 0.0)
+        let verticalView1 = NSLayoutConstraint(item: view1, attribute: .bottom, relatedBy: .equal, toItem: view2, attribute: .top, multiplier: 1.0, constant: 0)
         
-        self.view.addConstraints([leftPin, rightPin, topPin, pinBottom])
+        let leftPinView2 = NSLayoutConstraint(item: view2, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let bottomPinView2 = NSLayoutConstraint(item: view2, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+        let rightPinView2 = NSLayoutConstraint(item: view2, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let heightView2 = NSLayoutConstraint(item: view2, attribute: .height, relatedBy: .equal, toItem: self.view, attribute: .height, multiplier: 0.35, constant: 0.0)
+        
+        
+        
+        self.view.addConstraints([leftPinView1, rightPinView1, topPinView1, leftPinView2, bottomPinView2, rightPinView2, heightView1, verticalView1, heightView2])
     }
 
 
