@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         initViews()
         createConstraints()
-        
     }
     
     func initViews() {
@@ -31,6 +30,9 @@ class ViewController: UIViewController {
         view2.translatesAutoresizingMaskIntoConstraints = false
         view3.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageView.image = UIImage(named: "guy")
+        imageView.contentMode = .scaleAspectFit
         
         view1.backgroundColor = .cyan
         view2.backgroundColor = .green
