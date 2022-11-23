@@ -9,22 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var view1: UIView!
-    var view2: UIView!
-    var view3: UIView!
-    var imageView: UIImageView!
+    var view1 = UIView()
+    var view2 = UIView()
+    var view3 = UIView()
+    var imageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-        createConstraints()
+        
     }
     
     func initViews() {
-        self.view1 = UIView()
-        self.view2 = UIView()
-        self.view3 = UIView()
-        self.imageView = UIImageView()
         
         view1.translatesAutoresizingMaskIntoConstraints = false
         view2.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +40,8 @@ class ViewController: UIViewController {
         self.view.addSubview(view2)
         self.view.addSubview(view3)
         self.view1.addSubview(imageView)
+        
+        createConstraints()
     }
     
     func createConstraints() {
