@@ -13,6 +13,8 @@
 		55E84A3A292CD9BA00C0FD15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E84A38292CD9BA00C0FD15 /* Main.storyboard */; };
 		55E84A3C292CD9BA00C0FD15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E84A3B292CD9BA00C0FD15 /* Assets.xcassets */; };
 		55E84A3F292CD9BA00C0FD15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E84A3D292CD9BA00C0FD15 /* LaunchScreen.storyboard */; };
+		55E84A48292F5F5300C0FD15 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 55E84A47292F5F5300C0FD15 /* TinyConstraints */; };
+		55E84A4A292F83B600C0FD15 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E84A49292F83B600C0FD15 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		55E84A3B292CD9BA00C0FD15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55E84A3E292CD9BA00C0FD15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55E84A40292CD9BA00C0FD15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55E84A49292F83B600C0FD15 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E84A48292F5F5300C0FD15 /* TinyConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		55E84A31292CD9BA00C0FD15 /* NativeLayoutPractice */ = {
 			isa = PBXGroup;
 			children = (
+				55E84A49292F83B600C0FD15 /* SecondViewController.swift */,
 				55E84A32292CD9BA00C0FD15 /* AppDelegate.swift */,
 				55E84A34292CD9BA00C0FD15 /* SceneDelegate.swift */,
 				55E84A36292CD9BA00C0FD15 /* ViewController.swift */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = NativeLayoutPractice;
+			packageProductDependencies = (
+				55E84A47292F5F5300C0FD15 /* TinyConstraints */,
+			);
 			productName = NativeLayoutPractice;
 			productReference = 55E84A2F292CD9BA00C0FD15 /* NativeLayoutPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 55E84A26292CD9BA00C0FD15;
+			packageReferences = (
+				55E84A46292F5F5300C0FD15 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+			);
 			productRefGroup = 55E84A30292CD9BA00C0FD15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E84A4A292F83B600C0FD15 /* SecondViewController.swift in Sources */,
 				55E84A37292CD9BA00C0FD15 /* ViewController.swift in Sources */,
 				55E84A33292CD9BA00C0FD15 /* AppDelegate.swift in Sources */,
 				55E84A35292CD9BA00C0FD15 /* SceneDelegate.swift in Sources */,
@@ -356,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55E84A46292F5F5300C0FD15 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55E84A47292F5F5300C0FD15 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55E84A46292F5F5300C0FD15 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55E84A27292CD9BA00C0FD15 /* Project object */;
 }

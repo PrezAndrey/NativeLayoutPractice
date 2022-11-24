@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var view2 = UIView()
     var view3 = UIView()
     var imageView = UIImageView()
+    var button = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         view2.translatesAutoresizingMaskIntoConstraints = false
         view3.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         imageView.image = UIImage(named: "guy")
         imageView.contentMode = .scaleAspectFit
@@ -34,12 +36,18 @@ class ViewController: UIViewController {
         view2.backgroundColor = .green
         view3.backgroundColor = .brown
         imageView.backgroundColor = .white
+        button.backgroundColor = .blue
+        button.tintColor = .white
+        
+        button.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        
         
         
         self.view.addSubview(view1)
         self.view.addSubview(view2)
         self.view.addSubview(view3)
         self.view1.addSubview(imageView)
+        self.view2.addSubview(button)
         
         createConstraints()
     }
@@ -60,8 +68,17 @@ class ViewController: UIViewController {
         let imagePosY = NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: view1, attribute: .centerY, multiplier: 1.0, constant: 0)
         let imageWidth = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: view1, attribute: .width, multiplier: 0.0, constant: 200)
         let imageHeight = NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: view1, attribute: .height, multiplier: 0.0, constant: 200)
+        
+        let buttonPosX = NSLayoutConstraint(item: button, attribute: .centerX, relatedBy: .equal, toItem: view2, attribute: .centerX, multiplier: 1.0, constant: 0)
+        let buttonPosY = NSLayoutConstraint(item: button, attribute: .centerY, relatedBy: .equal, toItem: view2, attribute: .centerY, multiplier: 1.0, constant: 0)
+        let buttonWidth = NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: view2, attribute: .width, multiplier: 0.0, constant: 200)
+        let buttonHeight = NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: view2, attribute: .height, multiplier: 0.0, constant: 100)
 
-        self.view.addConstraints([leftPinView1, topPinView1, rightPinView1, heightView1, verticalView1, leftPinView2, bottomPinView2, rightPinView2, heightView2, imagePosX, imagePosY, imageWidth, imageHeight])
+        self.view.addConstraints([leftPinView1, topPinView1, rightPinView1, heightView1, verticalView1, leftPinView2, bottomPinView2, rightPinView2, heightView2, imagePosX, imagePosY, imageWidth, imageHeight, buttonPosX, buttonPosY, buttonWidth, buttonHeight])
+    }
+    
+    func moveToNewScreen() {
+        
     }
 
 
