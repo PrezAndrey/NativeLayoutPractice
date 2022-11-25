@@ -16,24 +16,26 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureUI()
+        initViews()
     }
-    func configureUI() {
-        view1 = UIView()
-        view2 = UIView()
+    fileprivate func initViews() {
+        view1 = TinyView()
+        view2 = TinyView()
         imageView = UIImageView()
-        
-        view1.translatesAutoresizingMaskIntoConstraints = false
-        view2.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view1.backgroundColor = .blue
-        view2.backgroundColor = .red
-        
-        
-        
+        configureViews()
+        addSubViews()
+        constrainSubviews()
     }
     
+    fileprivate func configureViews() {
+        view1.backgroundColor = .blue
+    }
     
+    fileprivate func addSubViews() {
+        self.view.addSubview(view1)
+    }
+    
+    fileprivate func constrainSubviews() {
+        view1.edgesToSuperview()
+    }
 }

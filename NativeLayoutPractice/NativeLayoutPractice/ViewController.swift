@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         imageView = UIImageView()
         button = UIButton()
         
+        configureViews()
+        addSubViews()
+        createConstraints()
+    }
+    
+    fileprivate func configureViews() {
         view1.translatesAutoresizingMaskIntoConstraints = false
         view2.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,19 +45,16 @@ class ViewController: UIViewController {
         imageView.backgroundColor = .white
         button.backgroundColor = .blue
         button.tintColor = .white
-        
-        
-        
-        
+    }
+    
+    fileprivate func addSubViews() {
         self.view.addSubview(view1)
         self.view.addSubview(view2)
         self.view1.addSubview(imageView)
         self.view2.addSubview(button)
-        
-        createConstraints()
     }
     
-    func createConstraints() {
+    fileprivate func createConstraints() {
         let leftPinView1 = NSLayoutConstraint(item: view1, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0.0)
         let topPinView1 = NSLayoutConstraint(item: view1, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0.0)
         let rightPinView1 = NSLayoutConstraint(item: view1, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0.0)
@@ -75,9 +78,5 @@ class ViewController: UIViewController {
 
         self.view.addConstraints([leftPinView1, topPinView1, rightPinView1, heightView1, verticalView1, leftPinView2, bottomPinView2, rightPinView2, heightView2, imagePosX, imagePosY, imageWidth, imageHeight, buttonPosX, buttonPosY, buttonWidth, buttonHeight])
     }
-    
-    
-
-
 }
 
