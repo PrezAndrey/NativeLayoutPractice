@@ -9,11 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var view1 = UIView()
-    var view2 = UIView()
-    var view3 = UIView()
-    var imageView = UIImageView()
-    var button = UIButton()
+    var view1: UIView!
+    var view2: UIView!
+    var imageView: UIImageView!
+    var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +21,13 @@ class ViewController: UIViewController {
     }
     
     func initViews() {
+        view1 = UIView()
+        view2 = UIView()
+        imageView = UIImageView()
+        button = UIButton()
         
         view1.translatesAutoresizingMaskIntoConstraints = false
         view2.translatesAutoresizingMaskIntoConstraints = false
-        view3.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -34,18 +36,15 @@ class ViewController: UIViewController {
         
         view1.backgroundColor = .cyan
         view2.backgroundColor = .green
-        view3.backgroundColor = .brown
         imageView.backgroundColor = .white
         button.backgroundColor = .blue
         button.tintColor = .white
         
-        button.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
         
         
         
         self.view.addSubview(view1)
         self.view.addSubview(view2)
-        self.view.addSubview(view3)
         self.view1.addSubview(imageView)
         self.view2.addSubview(button)
         
@@ -77,9 +76,7 @@ class ViewController: UIViewController {
         self.view.addConstraints([leftPinView1, topPinView1, rightPinView1, heightView1, verticalView1, leftPinView2, bottomPinView2, rightPinView2, heightView2, imagePosX, imagePosY, imageWidth, imageHeight, buttonPosX, buttonPosY, buttonWidth, buttonHeight])
     }
     
-    func moveToNewScreen() {
-        
-    }
+    
 
 
 }
