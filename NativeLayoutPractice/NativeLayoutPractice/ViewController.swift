@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         imageView.backgroundColor = .white
         button.backgroundColor = .blue
         button.tintColor = .white
+        
+        button.addTarget(self, action: #selector(moveToVC), for: .touchUpInside)
     }
     
     fileprivate func addSubViews() {
@@ -52,6 +54,13 @@ class ViewController: UIViewController {
         self.view.addSubview(view2)
         self.view1.addSubview(imageView)
         self.view2.addSubview(button)
+    }
+    
+    @objc func moveToVC() {
+        print("IT WORKS _____________________________")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "svc")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     fileprivate func createConstraints() {
