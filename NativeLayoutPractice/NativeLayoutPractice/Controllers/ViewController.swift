@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Storyboarded {
     
+    var coordinator: MainCoordinator?
     var view1: UIView!
     var view2: UIView!
     var imageView: UIImageView!
@@ -57,10 +58,7 @@ class ViewController: UIViewController {
     }
     
     @objc func moveToVC() {
-        print("IT WORKS _____________________________")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "svc")
-        navigationController?.pushViewController(vc, animated: true)
+        coordinator!.moveToSecondScreen()
     }
     
     fileprivate func createConstraints() {

@@ -8,8 +8,8 @@
 import UIKit
 import TinyConstraints
 
-class SecondViewController: UIViewController {
-    
+class SecondViewController: UIViewController, Storyboarded {
+    var coordinator: MainCoordinator?
     var view1: UIView!
     var view2: UIView!
     var imageView: UIImageView!
